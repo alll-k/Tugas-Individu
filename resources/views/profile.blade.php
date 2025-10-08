@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('layouts.main')
+
+@section('title', 'PROFIL')
+
+@section('content')
+    <h1>👤 Profil</h1>
+    <p>Nama: Hammam Al Kamil</p>
+    <p>Alamat: Jepara, Jawa Tengah</p>
+    <p>Hobi: Membaca & Ngoding</p>
+@endsection
