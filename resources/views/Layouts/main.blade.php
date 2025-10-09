@@ -11,7 +11,7 @@
             color: #333;
         }
 
-        /* Navbar */
+        /* Navigasii sayangg */
         nav {
             background: #6A0DAD; /* ungu elegan */
             padding: 14px 30px;
@@ -45,7 +45,7 @@
             border-radius: 2px;
         }
 
-        /* Konten */
+        /* ini kontennya sayanggg */
         .content {
             min-height: 70vh;
             padding: 40px 20px;
