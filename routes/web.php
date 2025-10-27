@@ -21,4 +21,4 @@ Route::get('/berita', [BeritaController::class, 'index']);
 
 Route::get('/berita/{slug}', [BeritaController::class, 'datatampil']);
 
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa');
