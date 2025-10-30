@@ -5,12 +5,13 @@
 @section('content')
 <h1 class="text-center"> Data Mahasiswa</h1>
     <div class="row">
+      <a href="/tambahmahasiswa">
         <button type="button" class="btn btn-success">Tambah Data</button>
         <table class="table">
   <thead>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Name</th>
+      <th scope="col">Nama</th>
       <th scope="col">NIM</th>
       <th scope="col">Program Studi</th>
       <th scope="col">Email</th>

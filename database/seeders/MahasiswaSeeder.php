@@ -14,11 +14,11 @@ class MahasiswaSeeder extends Seeder
     public function run(): void
     {
         DB::table('mahasiswas')->insert([
-            'name' => "Yanto",
-            'nim' => 1432564810,
-            'prodi' => "Sastra Mesin",
-            'email' => "ynt0@email.com",
-            'nohp' =>62776038,
+            'name' => "Yono",
+            'nim' => 1432564811,
+            'prodi' => "Ilmu Hitam",
+            'email' => "yn0@email.com",
+            'nohp' =>62745678,
         ]);
         }
 }
