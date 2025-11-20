@@ -23,3 +23,6 @@ Route::get('/berita/{slug}', [BeritaController::class, 'datatampil']);
 Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa');
 Route::get('/tambahmahasiswa', [MahasiswaController::class, 'tambahmahasiswa'])->name('tambahmahasiswa');
 Route::POST('/insertdata', [MahasiswaController::class, 'insertdata'])->name('insertdata');
+
+Route::get('/tampildata/{id}', [MahasiswaController::class, 'tampildata'])->name('tampildata');
+Route::POST('/editdata/{id}', [MahasiswaController::class, 'editdata'])->name('editdata');
