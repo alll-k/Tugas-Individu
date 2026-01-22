@@ -7,47 +7,62 @@ use App\Models\Mahasiswa;
 
 class MahasiswaController extends Controller
 {
-    public function index () 
+    public function __construct()
     {
-
+        $this->middleware('auth');
+    }
+    
+    public function index()
+    {
         $data = Mahasiswa::all();
 
-    return view ('mahasiswa', compact ('data'), [
-        "title" => "Data Mahasiswa",
-    ]);
-}
+        return view('mahasiswa', compact('data'), [
+            "title" => "Data Mahasiswa",
+        ]);
+    }
 
-public function tambahmahasiswa()
-{
-    return view ('tambahmahasiswa', [
-        "title" => "Tambah Data Mahasiswa",
-    ]);
-}
+    public function tambahmahasiswa()
+    {
+        return view('tambahmahasiswa', [
+            "title" => "Tambah Data Mahasiswa",
+        ]);
+    }
 
-public function insertdata(Request $request)
-{
-    Mahasiswa::create($request -> all());
+    public function insertdata(Request $request)
+    {
+        Mahasiswa::create($request->all());
+        return redirect()->route('mahasiswa')->with('success', 'Data Berhasil Ditambahkan');
+    }
 
-    return redirect() ->route('mahasiswa') -> with('success', 'Data Berhasil Ditambahkan');
+    public function tampildata($id)
+    {
+        $data = Mahasiswa::find($id);
 
-}
+        return view("edit", [
+            "title" => "Edit Data Mahasiswa",
+            "data" => $data,
+        ]);
+    }
 
-public function tampildata($id)
-{
-    $data = Mahasiswa::find($id);
+    public function editdata(Request $request, $id)
+    {
+        $data = Mahasiswa::find($id);
+        $data->update($request->all());
 
-    return view("edit", [
-        "title" => "Edit Data Mahasiswa",
-        "data" => $data,
-    ]);
-}
+        return redirect()->route('mahasiswa')->with('success', 'Data Berhasil Diedit');
+    }
 
-public function editdata(Request $request, $id)
-{
-    $data = Mahasiswa::find($id);
+    // --- TAMBAHKAN KODE DI BAWAH INI ---
 
-    $data->update($request -> all());
+    public function delete($id)
+    {
+        $data = Mahasiswa::find($id);
 
-    return redirect() ->route('mahasiswa') -> with ('success', 'Data Berhasil Diedit');
-}
+        if ($data) {
+            $data->delete();
+            return redirect()->route('mahasiswa')->with('success', 'Data Berhasil Dihapus');
+        }
+
+        return redirect()->route('mahasiswa')->with('error', 'Data tidak ditemukan');
+    }
 }

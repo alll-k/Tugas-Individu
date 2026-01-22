@@ -31,9 +31,7 @@
         <td>{{$mahasiswa["nohp"]}}</td>
         <td>
             <a href = "tampildata/{{ $mahasiswa ['id'] }}" class="btn btn-primary">EDIT</a>
-            <button type="button" class="btn btn-danger">HAPUS</button>
-        </td>
-        <?php $i++?>
+            <a href="/deletedata/{{ $mahasiswa->id }}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data {{ $mahasiswa->name }}?')"> HAPUS</a>
     </tr>
     @endforeach
   </tbody>
